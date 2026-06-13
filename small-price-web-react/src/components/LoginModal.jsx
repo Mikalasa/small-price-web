@@ -19,7 +19,12 @@ function LoginModal({ isOpen, auth, onClose }) {
         onClick={onClose}
       />
 
-      <section className="relative w-full max-w-md overflow-hidden rounded-[2rem] border border-white/70 bg-white shadow-[0_28px_90px_rgba(15,23,42,0.28)]">
+      <section
+        className="relative w-full max-w-md overflow-hidden rounded-[2rem] border border-white/70 bg-white shadow-[0_28px_90px_rgba(15,23,42,0.28)]"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="login-modal-title"
+      >
         <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-teal-400 via-slate-900 to-emerald-300" />
 
         <div className="p-6 sm:p-7">
@@ -28,7 +33,10 @@ function LoginModal({ isOpen, auth, onClose }) {
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-teal-700">
                 {isLoggedIn ? "Profile" : "Welcome back"}
               </p>
-              <h2 className="mt-2 text-2xl font-bold tracking-normal text-slate-950">
+              <h2
+                className="mt-2 text-2xl font-bold tracking-normal text-slate-950"
+                id="login-modal-title"
+              >
                 {isLoggedIn ? "Your account" : "Log in to Small Price"}
               </h2>
             </div>
@@ -94,7 +102,12 @@ function LoggedOutContent({ onLogin }) {
         Save searches, track better prices, and keep your favorite products in one place.
       </p>
 
-      <form className="space-y-4" action="#" onSubmit={handleSubmit}>
+      <form
+        className="space-y-4"
+        action="#"
+        aria-label="Login form"
+        onSubmit={handleSubmit}
+      >
         <div>
           <label className="mb-2 block text-sm font-semibold text-slate-700" htmlFor="email">
             Email
