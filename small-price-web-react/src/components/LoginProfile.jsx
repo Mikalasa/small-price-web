@@ -1,20 +1,12 @@
 import { useState } from "react"
+import { getInitials } from "../features/auth/authUtils.js"
+import { useAuth } from "../features/auth/useAuth.js"
 import LoginModal from "./LoginModal.jsx"
-
-function getInitials(name) {
-  return name
-    .trim()
-    .split(/\s+/)
-    .slice(0, 2)
-    .map((part) => part[0])
-    .join("")
-    .toUpperCase()
-}
 
 function LoginProfile() {
   const [isOpen, setIsOpen] = useState(false)
-  const [user, setUser] = useState(null)
-  const isLoggedIn = Boolean(user)
+  const auth = useAuth()
+  const { user, isLoggedIn } = auth
   const initials = user ? getInitials(user.name) : ""
 
   return (
@@ -55,9 +47,7 @@ function LoginProfile() {
 
       <LoginModal
         isOpen={isOpen}
-        user={user}
-        onLogin={(nextUser) => setUser(nextUser)}
-        onLogout={() => setUser(null)}
+        auth={auth}
         onClose={() => setIsOpen(false)}
       />
     </>

@@ -1,21 +1,13 @@
 import { useState } from "react"
-import { fakeUser } from "../test/fakeUser.js"
+import { getTestCredentials } from "../features/auth/authService.js"
+import { getInitials } from "../features/auth/authUtils.js"
 
-function getInitials(name) {
-  return name
-    .trim()
-    .split(/\s+/)
-    .slice(0, 2)
-    .map((part) => part[0])
-    .join("")
-    .toUpperCase()
-}
-
-function LoginModal({ isOpen, user, onLogin, onLogout, onClose }) {
+function LoginModal({ isOpen, auth, onClose }) {
   if (!isOpen) {
     return null
   }
 
+  const { user } = auth
   const isLoggedIn = Boolean(user)
 
   return (
@@ -31,42 +23,47 @@ function LoginModal({ isOpen, user, onLogin, onLogout, onClose }) {
         <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-teal-400 via-slate-900 to-emerald-300" />
 
         <div className="p-6 sm:p-7">
-        <div className="mb-7 flex items-start justify-between gap-4">
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-teal-700">
-              {isLoggedIn ? "Profile" : "Welcome back"}
-            </p>
-            <h2 className="mt-2 text-2xl font-bold tracking-normal text-slate-950">
-              {isLoggedIn ? "Your account" : "Log in to Small Price"}
-            </h2>
+          <div className="mb-7 flex items-start justify-between gap-4">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-teal-700">
+                {isLoggedIn ? "Profile" : "Welcome back"}
+              </p>
+              <h2 className="mt-2 text-2xl font-bold tracking-normal text-slate-950">
+                {isLoggedIn ? "Your account" : "Log in to Small Price"}
+              </h2>
+            </div>
+
+            <button
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-100 text-xl leading-none text-slate-500 transition hover:bg-slate-200 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
+              type="button"
+              aria-label="Close login modal"
+              onClick={onClose}
+            >
+              ×
+            </button>
           </div>
 
-          <button
-            className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-100 text-xl leading-none text-slate-500 transition hover:bg-slate-200 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
-            type="button"
-            aria-label="Close login modal"
-            onClick={onClose}
-          >
-            ×
-          </button>
-        </div>
+          {isLoggedIn ? (
+            <LoggedInContent
+              user={user}
+              onLogout={() => {
+                auth.logout()
+                onClose()
+              }}
+            />
+          ) : (
+            <LoggedOutContent
+              onLogin={(email, password) => {
+                const result = auth.login(email, password)
 
-        {isLoggedIn ? (
-          <LoggedInContent
-            user={user}
-            onLogout={() => {
-              onLogout()
-              onClose()
-            }}
-          />
-        ) : (
-          <LoggedOutContent
-            onLogin={(nextUser) => {
-              onLogin(nextUser)
-              onClose()
-            }}
-          />
-        )}
+                if (result.ok) {
+                  onClose()
+                }
+
+                return result
+              }}
+            />
+          )}
         </div>
       </section>
     </div>
@@ -77,17 +74,18 @@ function LoggedOutContent({ onLogin }) {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
+  const testCredentials = getTestCredentials()
 
   function handleSubmit(event) {
     event.preventDefault()
+    const result = onLogin(email, password)
 
-    if (email === fakeUser.email && password === fakeUser.password) {
+    if (result.ok) {
       setError("")
-      onLogin(fakeUser)
       return
     }
 
-    setError("Email or password is incorrect.")
+    setError(result.error)
   }
 
   return (
@@ -143,10 +141,10 @@ function LoggedOutContent({ onLogin }) {
 
       <div className="mt-5 flex items-center justify-between text-sm">
         <button className="font-medium text-teal-700 hover:text-teal-800" type="button">
-          Test: {fakeUser.email}
+          Test: {testCredentials.email}
         </button>
         <button className="font-medium text-slate-500 hover:text-slate-900" type="button">
-          Password: {fakeUser.password}
+          Password: {testCredentials.password}
         </button>
       </div>
     </div>
