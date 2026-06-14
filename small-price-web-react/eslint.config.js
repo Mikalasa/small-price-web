@@ -24,4 +24,14 @@ export default defineConfig([
       globals: globals.jest,
     },
   },
+  {
+    files: ['tests/e2e/**/*.cy.js'],
+    languageOptions: {
+      globals: {
+        ...globals.mocha,
+        cy: 'readonly',
+        Cypress: 'readonly',
+      },
+    },
+  },
 ])
