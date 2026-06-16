@@ -1,7 +1,7 @@
 function SearchBar(){
     return (
-        <main className="min-h-screen bg-[#f7f8fb] text-slate-950">
-            <section className="mx-auto flex min-h-screen w-full max-w-6xl flex-col items-center justify-center px-5 py-16">
+        <main className="bg-[#f7f8fb] text-slate-950">
+            <section className="mx-auto flex w-full max-w-6xl flex-col items-center px-5 pb-8 pt-36 sm:pt-40">
                 <div className="mb-8 text-center">
                     <p className="mb-4 text-sm font-medium uppercase tracking-[0.18em] text-teal-700">
                         Small Price

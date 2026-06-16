@@ -1,5 +1,5 @@
 import { act, renderHook } from "@testing-library/react"
-import { fakeUser } from "../../../src/features/auth/fakeUser.js"
+import { fakeUser } from "../../../src/data/users.js"
 import { useAuth } from "../../../src/features/auth/useAuth.js"
 
 describe("useAuth", () => {

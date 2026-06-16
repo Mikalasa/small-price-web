@@ -1,6 +1,6 @@
 import { fireEvent, render, screen, within } from "@testing-library/react"
 import LoginProfile from "../../../src/components/LoginProfile.jsx"
-import { fakeUser } from "../../../src/features/auth/fakeUser.js"
+import { fakeUser } from "../../../src/data/users.js"
 import { getInitials } from "../../../src/features/auth/authUtils.js"
 
 describe("LoginProfile UI", () => {

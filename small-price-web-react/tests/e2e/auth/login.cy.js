@@ -1,4 +1,4 @@
-import { fakeUser } from "../../../src/features/auth/fakeUser.js"
+import { fakeUser } from "../../../src/data/users.js"
 import { getInitials } from "../../../src/features/auth/authUtils.js"
 
 describe("Login flow", () => {

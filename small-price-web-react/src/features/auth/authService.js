@@ -1,4 +1,4 @@
-import { fakeUser } from "./fakeUser.js"
+import { fakeUser } from "../../data/users.js"
 
 export function loginWithEmailAndPassword(email, password) {
   if (email === fakeUser.email && password === fakeUser.password) {

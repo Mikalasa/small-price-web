@@ -2,7 +2,7 @@ import {
   getTestCredentials,
   loginWithEmailAndPassword,
 } from "../../../src/features/auth/authService.js"
-import { fakeUser } from "../../../src/features/auth/fakeUser.js"
+import { fakeUser } from "../../../src/data/users.js"
 
 describe("authService", () => {
   test("logs in when email and password are correct", () => {
