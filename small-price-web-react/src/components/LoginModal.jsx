@@ -35,7 +35,7 @@ function LoginModal({ isOpen, auth, onClose }) {
                 {isLoggedIn ? "Profile" : "Account access"}
               </p>
               <h2
-                className="mt-2 text-2xl font-bold tracking-normal text-slate-950"
+                className={loginStyles.modalTitle}
                 id="login-modal-title"
               >
                 {isLoggedIn ? "Your account" : "Log in to Small Price"}
@@ -99,7 +99,7 @@ function LoggedOutContent({ onLogin }) {
 
   return (
     <div>
-      <p className="mb-6 text-sm leading-6 text-slate-600">
+      <p className={`mb-6 ${loginStyles.modalBody}`}>
         Save searches, track better prices, and keep your favorite products in one place.
       </p>
 
@@ -110,7 +110,7 @@ function LoggedOutContent({ onLogin }) {
         onSubmit={handleSubmit}
       >
         <div>
-          <label className="mb-2 block text-sm font-semibold text-slate-700" htmlFor="email">
+          <label className={`mb-2 block ${loginStyles.modalLabel}`} htmlFor="email">
             Email
           </label>
           <input
@@ -125,7 +125,7 @@ function LoggedOutContent({ onLogin }) {
         </div>
 
         <div>
-          <label className="mb-2 block text-sm font-semibold text-slate-700" htmlFor="password">
+          <label className={`mb-2 block ${loginStyles.modalLabel}`} htmlFor="password">
             Password
           </label>
           <input
@@ -157,7 +157,7 @@ function LoggedOutContent({ onLogin }) {
         <button className="font-medium text-teal-700 hover:text-teal-800" type="button">
           Test: {testCredentials.email}
         </button>
-        <button className="font-medium text-slate-500 hover:text-slate-900" type="button">
+        <button className={loginStyles.testCredential} type="button">
           Password: {testCredentials.password}
         </button>
       </div>
@@ -173,23 +173,23 @@ function LoggedInContent({ user, onLogout }) {
           {getInitials(user.name)}
         </div>
         <div>
-          <p className="font-bold text-slate-950">{user.name}</p>
-          <p className="text-sm text-slate-500">{user.email}</p>
+          <p className={loginStyles.accountName}>{user.name}</p>
+          <p className={loginStyles.accountEmail}>{user.email}</p>
         </div>
       </div>
 
       <div className="space-y-2">
         <button className={buttonStyles.modalGhost} type="button">
           Saved searches
-          <span className="text-slate-400">12</span>
+          <span className={loginStyles.accountCount}>12</span>
         </button>
         <button className={buttonStyles.modalGhost} type="button">
           Price alerts
-          <span className="text-slate-400">5</span>
+          <span className={loginStyles.accountCount}>5</span>
         </button>
         <button className={buttonStyles.modalGhost} type="button">
           Account settings
-          <span className="text-slate-400">→</span>
+          <span className={loginStyles.accountCount}>→</span>
         </button>
       </div>
 

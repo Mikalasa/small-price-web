@@ -30,7 +30,7 @@ function MonthlyPopularProducts() {
               <span className={badgeStyles.rank}>
                 {index + 1}
               </span>
-              <span className="text-lg font-black text-slate-300">
+              <span className={textStyles.imageInitials}>
                 {product.name.slice(0, 2).toUpperCase()}
               </span>
             </div>
@@ -46,7 +46,7 @@ function MonthlyPopularProducts() {
                 </div>
               </div>
               <div className="mt-3 flex flex-wrap items-center gap-2 text-xs">
-                <span className="font-semibold text-slate-500">
+                <span className={textStyles.productHeat}>
                   {product.heat}
                 </span>
                 <span className={badgeStyles.productNote}>

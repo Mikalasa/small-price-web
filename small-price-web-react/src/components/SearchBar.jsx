@@ -16,7 +16,7 @@ function SearchBar(){
                 <form className="w-full max-w-3xl" action="#" role="search">
                     <div className={`flex min-h-16 items-center gap-3 ${inputStyles.searchShell}`}>
                         <svg
-                            className="h-5 w-5 shrink-0 text-slate-400"
+                            className="h-5 w-5 shrink-0 text-slate-400 dark:text-slate-500"
                             viewBox="0 0 24 24"
                             fill="none"
                             aria-hidden="true"
