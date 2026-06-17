@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { getInitials } from "../features/auth/authUtils.js"
 import { useAuth } from "../features/auth/useAuth.js"
+import { buttonStyles, loginStyles } from "../theme/styles.js"
 import LoginModal from "./LoginModal.jsx"
 
 function LoginProfile() {
@@ -11,9 +12,9 @@ function LoginProfile() {
 
   return (
     <>
-      <div className="flex items-center gap-2 rounded-full border border-white/70 bg-white/90 p-1.5 shadow-[0_12px_35px_rgba(15,23,42,0.1)] backdrop-blur-md">
+      <div className={`flex items-center gap-2 ${loginStyles.profileShell}`}>
         <button
-          className="rounded-full px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 hover:text-slate-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600"
+          className={buttonStyles.loginText}
           type="button"
           onClick={() => setIsOpen(true)}
         >
@@ -21,10 +22,10 @@ function LoginProfile() {
         </button>
 
         <button
-          className={`flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600 ${
+          className={`flex items-center justify-center ${loginStyles.avatarButton} ${
             isLoggedIn
-              ? "bg-slate-950 text-white hover:bg-slate-800"
-              : "bg-slate-200 text-slate-500 hover:bg-slate-300 hover:text-slate-700"
+              ? buttonStyles.avatarLoggedIn
+              : buttonStyles.avatarLoggedOut
           }`}
           type="button"
           aria-label="Open profile"

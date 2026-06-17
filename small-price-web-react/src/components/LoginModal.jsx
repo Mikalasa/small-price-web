@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { getTestCredentials } from "../features/auth/authService.js"
 import { getInitials } from "../features/auth/authUtils.js"
+import { buttonStyles, inputStyles, loginStyles, textStyles } from "../theme/styles.js"
 
 function LoginModal({ isOpen, auth, onClose }) {
   if (!isOpen) {
@@ -11,7 +12,7 @@ function LoginModal({ isOpen, auth, onClose }) {
   const isLoggedIn = Boolean(user)
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/30 px-4 py-8">
+    <div className={`fixed inset-0 z-50 flex items-center justify-center ${loginStyles.modalBackdrop}`}>
       <button
         className="absolute inset-0 cursor-default"
         type="button"
@@ -20,17 +21,17 @@ function LoginModal({ isOpen, auth, onClose }) {
       />
 
       <section
-        className="relative w-full max-w-md overflow-hidden rounded-xl border border-slate-200 bg-white"
+        className={loginStyles.modalPanel}
         role="dialog"
         aria-modal="true"
         aria-labelledby="login-modal-title"
       >
-        <div className="absolute inset-x-0 top-0 h-1 bg-slate-950" />
+        <div className={loginStyles.modalAccent} />
 
         <div className="p-6 sm:p-7">
           <div className="mb-7 flex items-start justify-between gap-4">
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-teal-700">
+              <p className={textStyles.cardEyebrow}>
                 {isLoggedIn ? "Profile" : "Account access"}
               </p>
               <h2
@@ -42,7 +43,7 @@ function LoginModal({ isOpen, auth, onClose }) {
             </div>
 
             <button
-              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-slate-100 text-xl leading-none text-slate-500 transition hover:bg-slate-200 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600"
+              className={buttonStyles.modalClose}
               type="button"
               aria-label="Close login modal"
               onClick={onClose}
@@ -113,7 +114,7 @@ function LoggedOutContent({ onLogin }) {
             Email
           </label>
           <input
-            className="h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-sm text-slate-950 outline-none transition placeholder:text-slate-400 focus:border-slate-600"
+            className={inputStyles.modalInput}
             id="email"
             name="email"
             placeholder="you@example.com"
@@ -128,7 +129,7 @@ function LoggedOutContent({ onLogin }) {
             Password
           </label>
           <input
-            className="h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-sm text-slate-950 outline-none transition placeholder:text-slate-400 focus:border-slate-600"
+            className={inputStyles.modalInput}
             id="password"
             name="password"
             placeholder="Enter your password"
@@ -139,13 +140,13 @@ function LoggedOutContent({ onLogin }) {
         </div>
 
         {error ? (
-          <p className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm font-medium text-red-600">
+          <p className={loginStyles.error}>
             {error}
           </p>
         ) : null}
 
         <button
-          className="mt-2 h-11 w-full rounded-lg bg-slate-950 text-sm font-bold text-white transition hover:bg-slate-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600"
+          className={`mt-2 ${buttonStyles.modalPrimary}`}
           type="submit"
         >
           Log in
@@ -167,8 +168,8 @@ function LoggedOutContent({ onLogin }) {
 function LoggedInContent({ user, onLogout }) {
   return (
     <div>
-      <div className="mb-6 flex items-center gap-4 rounded-lg border border-slate-200 bg-slate-50 p-4">
-        <div className="flex h-12 w-12 items-center justify-center rounded-md bg-slate-950 text-base font-bold text-white">
+      <div className={`mb-6 flex items-center gap-4 ${loginStyles.accountCard}`}>
+        <div className={`flex items-center justify-center ${loginStyles.accountAvatar}`}>
           {getInitials(user.name)}
         </div>
         <div>
@@ -178,22 +179,22 @@ function LoggedInContent({ user, onLogout }) {
       </div>
 
       <div className="space-y-2">
-        <button className="flex w-full items-center justify-between rounded-lg border border-transparent px-3 py-2.5 text-left text-sm font-semibold text-slate-700 transition hover:border-slate-200 hover:bg-slate-50" type="button">
+        <button className={buttonStyles.modalGhost} type="button">
           Saved searches
           <span className="text-slate-400">12</span>
         </button>
-        <button className="flex w-full items-center justify-between rounded-lg border border-transparent px-3 py-2.5 text-left text-sm font-semibold text-slate-700 transition hover:border-slate-200 hover:bg-slate-50" type="button">
+        <button className={buttonStyles.modalGhost} type="button">
           Price alerts
           <span className="text-slate-400">5</span>
         </button>
-        <button className="flex w-full items-center justify-between rounded-lg border border-transparent px-3 py-2.5 text-left text-sm font-semibold text-slate-700 transition hover:border-slate-200 hover:bg-slate-50" type="button">
+        <button className={buttonStyles.modalGhost} type="button">
           Account settings
           <span className="text-slate-400">→</span>
         </button>
       </div>
 
       <button
-        className="mt-6 h-11 w-full rounded-lg border border-slate-300 text-sm font-semibold text-slate-700 transition hover:border-red-200 hover:bg-red-50 hover:text-red-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-400"
+        className={`mt-6 ${buttonStyles.modalDanger}`}
         type="button"
         onClick={onLogout}
       >
