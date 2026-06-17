@@ -1,10 +1,14 @@
 import { useState } from "react";
 import SearchBar from "../components/SearchBar.jsx";
 import LoginProfile from "../components/LoginProfile.jsx";
-import MonthlyPopularProducts from "../components/MonthlyPopularProducts.jsx";
-import QuarterlyPopularProducts from "../components/QuarterlyPopularProducts.jsx";
+import PopularProductsList from "../components/PopularProductsList.jsx";
 import ThemeToggle from "../components/ThemeToggle.jsx";
-import WeeklyPopularProducts from "../components/WeeklyPopularProducts.jsx";
+import { popularCopy } from "../constants/copy.js";
+import {
+    monthlyPopularProducts,
+    quarterlyPopularProducts,
+    weeklyPopularProducts,
+} from "../data/products.js";
 import { pageStyles } from "../theme/styles.js";
 
 function Home() {
@@ -23,9 +27,18 @@ function Home() {
             </div>
             <SearchBar />
             <section className="mx-auto grid w-full max-w-6xl gap-5 px-5 pb-16 lg:grid-cols-3">
-                <WeeklyPopularProducts />
-                <MonthlyPopularProducts />
-                <QuarterlyPopularProducts />
+                <PopularProductsList
+                    copy={popularCopy.weekly}
+                    products={weeklyPopularProducts}
+                />
+                <PopularProductsList
+                    copy={popularCopy.monthly}
+                    products={monthlyPopularProducts}
+                />
+                <PopularProductsList
+                    copy={popularCopy.quarterly}
+                    products={quarterlyPopularProducts}
+                />
             </section>
         </div>
     )

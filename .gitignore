@@ -22,3 +22,5 @@ dist/
 
 # coverage
 coverage/
+cypress/screenshots/
+cypress/videos/

@@ -1,24 +1,18 @@
-import { popularCopy } from "../constants/copy.js"
-import { quarterlyPopularProducts } from "../data/products.js"
 import { badgeStyles, cardStyles, textStyles } from "../theme/styles.js"
 
-function QuarterlyPopularProducts() {
+function PopularProductsList({ copy, products }) {
   return (
     <section className={cardStyles.popular}>
       <div className="mb-5 flex items-end justify-between gap-4">
         <div>
-          <p className={textStyles.cardEyebrow}>
-            {popularCopy.quarterly.eyebrow}
-          </p>
-          <h2 className={`mt-1 ${textStyles.cardTitle}`}>{popularCopy.quarterly.title}</h2>
+          <p className={textStyles.cardEyebrow}>{copy.eyebrow}</p>
+          <h2 className={`mt-1 ${textStyles.cardTitle}`}>{copy.title}</h2>
         </div>
-        <span className={badgeStyles.muted}>
-          {popularCopy.quarterly.period}
-        </span>
+        <span className={badgeStyles.muted}>{copy.period}</span>
       </div>
 
       <ol className="space-y-3">
-        {quarterlyPopularProducts.map((product, index) => (
+        {products.map((product, index) => (
           <li
             className={`grid grid-cols-[4.5rem_1fr] gap-4 ${cardStyles.productItem}`}
             key={product.id}
@@ -28,13 +22,12 @@ function QuarterlyPopularProducts() {
               aria-label={product.imageAlt}
               role="img"
             >
-              <span className={badgeStyles.rank}>
-                {index + 1}
-              </span>
+              <span className={badgeStyles.rank}>{index + 1}</span>
               <span className={textStyles.imageInitials}>
                 {product.name.slice(0, 2).toUpperCase()}
               </span>
             </div>
+
             <div className="min-w-0">
               <div className="flex items-start justify-between gap-3">
                 <div className="min-w-0">
@@ -46,13 +39,10 @@ function QuarterlyPopularProducts() {
                   <p className={`mt-1 ${textStyles.priceChange}`}>{product.change}</p>
                 </div>
               </div>
+
               <div className="mt-3 flex flex-wrap items-center gap-2 text-xs">
-                <span className={textStyles.productHeat}>
-                  {product.heat}
-                </span>
-                <span className={badgeStyles.productNote}>
-                  {product.note}
-                </span>
+                <span className={textStyles.productHeat}>{product.heat}</span>
+                <span className={badgeStyles.productNote}>{product.note}</span>
               </div>
             </div>
           </li>
@@ -62,4 +52,4 @@ function QuarterlyPopularProducts() {
   )
 }
 
-export default QuarterlyPopularProducts
+export default PopularProductsList
