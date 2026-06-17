@@ -26,10 +26,8 @@ function LoginModal({ isOpen, auth, onClose }) {
         aria-modal="true"
         aria-labelledby="login-modal-title"
       >
-        <div className={loginStyles.modalAccent} />
-
-        <div className="p-6 sm:p-7">
-          <div className="mb-7 flex items-start justify-between gap-4">
+        <div className="p-5 sm:p-6">
+          <div className="mb-6 flex items-start justify-between gap-4">
             <div>
               <p className={textStyles.cardEyebrow}>
                 {isLoggedIn ? "Profile" : "Account access"}
@@ -154,12 +152,13 @@ function LoggedOutContent({ onLogin }) {
       </form>
 
       <div className="mt-5 flex items-center justify-between text-sm">
-        <button className="font-medium text-teal-700 hover:text-teal-800" type="button">
-          Test: {testCredentials.email}
-        </button>
-        <button className={loginStyles.testCredential} type="button">
-          Password: {testCredentials.password}
-        </button>
+        <div className={`w-full ${loginStyles.demoPanel}`}>
+          <p className={loginStyles.demoLabel}>Demo account</p>
+          <div className="mt-2 flex flex-wrap justify-between gap-2">
+            <span className={loginStyles.testCredential}>{testCredentials.email}</span>
+            <span className={loginStyles.testCredential}>{testCredentials.password}</span>
+          </div>
+        </div>
       </div>
     </div>
   )
