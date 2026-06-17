@@ -11,7 +11,7 @@ function LoginModal({ isOpen, auth, onClose }) {
   const isLoggedIn = Boolean(user)
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/35 px-4 py-8 backdrop-blur-sm">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/30 px-4 py-8">
       <button
         className="absolute inset-0 cursor-default"
         type="button"
@@ -20,18 +20,18 @@ function LoginModal({ isOpen, auth, onClose }) {
       />
 
       <section
-        className="relative w-full max-w-md overflow-hidden rounded-[2rem] border border-white/70 bg-white shadow-[0_28px_90px_rgba(15,23,42,0.28)]"
+        className="relative w-full max-w-md overflow-hidden rounded-xl border border-slate-200 bg-white"
         role="dialog"
         aria-modal="true"
         aria-labelledby="login-modal-title"
       >
-        <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-teal-400 via-slate-900 to-emerald-300" />
+        <div className="absolute inset-x-0 top-0 h-1 bg-slate-950" />
 
         <div className="p-6 sm:p-7">
           <div className="mb-7 flex items-start justify-between gap-4">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-teal-700">
-                {isLoggedIn ? "Profile" : "Welcome back"}
+                {isLoggedIn ? "Profile" : "Account access"}
               </p>
               <h2
                 className="mt-2 text-2xl font-bold tracking-normal text-slate-950"
@@ -42,7 +42,7 @@ function LoginModal({ isOpen, auth, onClose }) {
             </div>
 
             <button
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-100 text-xl leading-none text-slate-500 transition hover:bg-slate-200 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-slate-100 text-xl leading-none text-slate-500 transition hover:bg-slate-200 hover:text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600"
               type="button"
               aria-label="Close login modal"
               onClick={onClose}
@@ -113,7 +113,7 @@ function LoggedOutContent({ onLogin }) {
             Email
           </label>
           <input
-            className="h-12 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 text-sm text-slate-950 shadow-inner outline-none transition placeholder:text-slate-400 focus:border-teal-400 focus:bg-white focus:ring-4 focus:ring-teal-100"
+            className="h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-sm text-slate-950 outline-none transition placeholder:text-slate-400 focus:border-slate-600"
             id="email"
             name="email"
             placeholder="you@example.com"
@@ -128,7 +128,7 @@ function LoggedOutContent({ onLogin }) {
             Password
           </label>
           <input
-            className="h-12 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 text-sm text-slate-950 shadow-inner outline-none transition placeholder:text-slate-400 focus:border-teal-400 focus:bg-white focus:ring-4 focus:ring-teal-100"
+            className="h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-sm text-slate-950 outline-none transition placeholder:text-slate-400 focus:border-slate-600"
             id="password"
             name="password"
             placeholder="Enter your password"
@@ -139,13 +139,13 @@ function LoggedOutContent({ onLogin }) {
         </div>
 
         {error ? (
-          <p className="rounded-2xl bg-red-50 px-4 py-3 text-sm font-medium text-red-600">
+          <p className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm font-medium text-red-600">
             {error}
           </p>
         ) : null}
 
         <button
-          className="mt-2 h-12 w-full rounded-2xl bg-slate-950 text-sm font-bold text-white shadow-[0_14px_32px_rgba(15,23,42,0.22)] transition hover:bg-teal-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
+          className="mt-2 h-11 w-full rounded-lg bg-slate-950 text-sm font-bold text-white transition hover:bg-slate-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600"
           type="submit"
         >
           Log in
@@ -167,8 +167,8 @@ function LoggedOutContent({ onLogin }) {
 function LoggedInContent({ user, onLogout }) {
   return (
     <div>
-      <div className="mb-6 flex items-center gap-4 rounded-3xl border border-slate-100 bg-slate-50 p-4 shadow-inner">
-        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-slate-950 text-base font-bold text-white shadow-[0_12px_30px_rgba(15,23,42,0.24)]">
+      <div className="mb-6 flex items-center gap-4 rounded-lg border border-slate-200 bg-slate-50 p-4">
+        <div className="flex h-12 w-12 items-center justify-center rounded-md bg-slate-950 text-base font-bold text-white">
           {getInitials(user.name)}
         </div>
         <div>
@@ -178,22 +178,22 @@ function LoggedInContent({ user, onLogout }) {
       </div>
 
       <div className="space-y-2">
-        <button className="flex w-full items-center justify-between rounded-2xl border border-transparent px-4 py-3 text-left text-sm font-semibold text-slate-700 transition hover:border-slate-200 hover:bg-slate-50" type="button">
+        <button className="flex w-full items-center justify-between rounded-lg border border-transparent px-3 py-2.5 text-left text-sm font-semibold text-slate-700 transition hover:border-slate-200 hover:bg-slate-50" type="button">
           Saved searches
           <span className="text-slate-400">12</span>
         </button>
-        <button className="flex w-full items-center justify-between rounded-2xl border border-transparent px-4 py-3 text-left text-sm font-semibold text-slate-700 transition hover:border-slate-200 hover:bg-slate-50" type="button">
+        <button className="flex w-full items-center justify-between rounded-lg border border-transparent px-3 py-2.5 text-left text-sm font-semibold text-slate-700 transition hover:border-slate-200 hover:bg-slate-50" type="button">
           Price alerts
           <span className="text-slate-400">5</span>
         </button>
-        <button className="flex w-full items-center justify-between rounded-2xl border border-transparent px-4 py-3 text-left text-sm font-semibold text-slate-700 transition hover:border-slate-200 hover:bg-slate-50" type="button">
+        <button className="flex w-full items-center justify-between rounded-lg border border-transparent px-3 py-2.5 text-left text-sm font-semibold text-slate-700 transition hover:border-slate-200 hover:bg-slate-50" type="button">
           Account settings
           <span className="text-slate-400">→</span>
         </button>
       </div>
 
       <button
-        className="mt-6 h-12 w-full rounded-2xl border border-slate-200 text-sm font-semibold text-slate-700 transition hover:border-red-200 hover:bg-red-50 hover:text-red-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-400"
+        className="mt-6 h-11 w-full rounded-lg border border-slate-300 text-sm font-semibold text-slate-700 transition hover:border-red-200 hover:bg-red-50 hover:text-red-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-400"
         type="button"
         onClick={onLogout}
       >

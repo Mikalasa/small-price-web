@@ -6,7 +6,7 @@ import WeeklyPopularProducts from "../components/WeeklyPopularProducts.jsx";
 
 function Home() {
     return(
-        <div className="relative min-h-screen bg-[#f7f8fb]">
+        <div className="relative min-h-screen bg-[#f7f8fb] text-slate-950">
             <div className="absolute right-5 top-5 z-10 sm:right-8 sm:top-8">
                 <LoginProfile />
             </div>
