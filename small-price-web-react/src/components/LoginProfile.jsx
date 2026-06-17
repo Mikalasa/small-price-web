@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { authCopy } from "../constants/copy.js"
 import { getInitials } from "../features/auth/authUtils.js"
 import { useAuth } from "../features/auth/useAuth.js"
 import { buttonStyles, loginStyles } from "../theme/styles.js"
@@ -18,7 +19,7 @@ function LoginProfile() {
           type="button"
           onClick={() => setIsOpen(true)}
         >
-          {isLoggedIn ? user.name : "Log in"}
+          {isLoggedIn ? user.name : authCopy.loginButton}
         </button>
 
         <button
@@ -28,7 +29,7 @@ function LoginProfile() {
               : buttonStyles.avatarLoggedOut
           }`}
           type="button"
-          aria-label="Open profile"
+          aria-label={authCopy.openProfileLabel}
           onClick={() => setIsOpen(true)}
         >
           {isLoggedIn ? (

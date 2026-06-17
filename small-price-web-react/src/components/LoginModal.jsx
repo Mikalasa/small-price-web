@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { authCopy } from "../constants/copy.js"
 import { getTestCredentials } from "../features/auth/authService.js"
 import { getInitials } from "../features/auth/authUtils.js"
 import { buttonStyles, inputStyles, loginStyles, textStyles } from "../theme/styles.js"
@@ -16,7 +17,7 @@ function LoginModal({ isOpen, auth, onClose }) {
       <button
         className="absolute inset-0 cursor-default"
         type="button"
-        aria-label="Close login modal backdrop"
+        aria-label={authCopy.closeBackdropLabel}
         onClick={onClose}
       />
 
@@ -30,20 +31,20 @@ function LoginModal({ isOpen, auth, onClose }) {
           <div className="mb-6 flex items-start justify-between gap-4">
             <div>
               <p className={textStyles.cardEyebrow}>
-                {isLoggedIn ? "Profile" : "Account access"}
+                {isLoggedIn ? authCopy.profileEyebrow : authCopy.loginEyebrow}
               </p>
               <h2
                 className={loginStyles.modalTitle}
                 id="login-modal-title"
               >
-                {isLoggedIn ? "Your account" : "Log in to Small Price"}
+                {isLoggedIn ? authCopy.profileTitle : authCopy.loginTitle}
               </h2>
             </div>
 
             <button
               className={buttonStyles.modalClose}
               type="button"
-              aria-label="Close login modal"
+              aria-label={authCopy.closeModalLabel}
               onClick={onClose}
             >
               ×
@@ -98,24 +99,24 @@ function LoggedOutContent({ onLogin }) {
   return (
     <div>
       <p className={`mb-6 ${loginStyles.modalBody}`}>
-        Save searches, track better prices, and keep your favorite products in one place.
+        {authCopy.description}
       </p>
 
       <form
         className="space-y-4"
         action="#"
-        aria-label="Login form"
+        aria-label={authCopy.loginFormLabel}
         onSubmit={handleSubmit}
       >
         <div>
           <label className={`mb-2 block ${loginStyles.modalLabel}`} htmlFor="email">
-            Email
+            {authCopy.emailLabel}
           </label>
           <input
             className={inputStyles.modalInput}
             id="email"
             name="email"
-            placeholder="you@example.com"
+            placeholder={authCopy.emailPlaceholder}
             type="email"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
@@ -124,13 +125,13 @@ function LoggedOutContent({ onLogin }) {
 
         <div>
           <label className={`mb-2 block ${loginStyles.modalLabel}`} htmlFor="password">
-            Password
+            {authCopy.passwordLabel}
           </label>
           <input
             className={inputStyles.modalInput}
             id="password"
             name="password"
-            placeholder="Enter your password"
+            placeholder={authCopy.passwordPlaceholder}
             type="password"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
@@ -147,13 +148,13 @@ function LoggedOutContent({ onLogin }) {
           className={`mt-2 ${buttonStyles.modalPrimary}`}
           type="submit"
         >
-          Log in
+          {authCopy.loginButton}
         </button>
       </form>
 
       <div className="mt-5 flex items-center justify-between text-sm">
         <div className={`w-full ${loginStyles.demoPanel}`}>
-          <p className={loginStyles.demoLabel}>Demo account</p>
+          <p className={loginStyles.demoLabel}>{authCopy.demoAccount}</p>
           <div className="mt-2 flex flex-wrap justify-between gap-2">
             <span className={loginStyles.testCredential}>{testCredentials.email}</span>
             <span className={loginStyles.testCredential}>{testCredentials.password}</span>
@@ -179,15 +180,15 @@ function LoggedInContent({ user, onLogout }) {
 
       <div className="space-y-2">
         <button className={buttonStyles.modalGhost} type="button">
-          Saved searches
+          {authCopy.savedSearches}
           <span className={loginStyles.accountCount}>12</span>
         </button>
         <button className={buttonStyles.modalGhost} type="button">
-          Price alerts
+          {authCopy.priceAlerts}
           <span className={loginStyles.accountCount}>5</span>
         </button>
         <button className={buttonStyles.modalGhost} type="button">
-          Account settings
+          {authCopy.accountSettings}
           <span className={loginStyles.accountCount}>→</span>
         </button>
       </div>
@@ -197,7 +198,7 @@ function LoggedInContent({ user, onLogout }) {
         type="button"
         onClick={onLogout}
       >
-        Log out
+        {authCopy.logoutButton}
       </button>
     </div>
   )

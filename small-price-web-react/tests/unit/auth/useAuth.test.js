@@ -1,4 +1,5 @@
 import { act, renderHook } from "@testing-library/react"
+import { authCopy } from "../../../src/constants/copy.js"
 import { fakeUser } from "../../../src/data/users.js"
 import { useAuth } from "../../../src/features/auth/useAuth.js"
 
@@ -33,7 +34,7 @@ describe("useAuth", () => {
     })
 
     expect(loginResult.ok).toBe(false)
-    expect(loginResult.error).toBe("Email or password is incorrect.")
+    expect(loginResult.error).toBe(authCopy.loginError)
     expect(result.current.user).toBeNull()
   })
 

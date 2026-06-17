@@ -1,3 +1,4 @@
+import { themeCopy } from "../constants/copy.js"
 import { themeToggleStyles } from "../theme/styles.js"
 
 function ThemeToggle({ isDark, onToggle }) {
@@ -6,7 +7,7 @@ function ThemeToggle({ isDark, onToggle }) {
       <button
         className={themeToggleStyles.button}
         type="button"
-        aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+        aria-label={isDark ? themeCopy.switchToLight : themeCopy.switchToDark}
         onClick={onToggle}
       >
         {isDark ? (

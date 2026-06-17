@@ -1,3 +1,4 @@
+import { searchCopy } from "../constants/copy.js";
 import { buttonStyles, inputStyles, pageStyles, textStyles } from "../theme/styles.js";
 
 function SearchBar(){
@@ -6,10 +7,10 @@ function SearchBar(){
             <section className="mx-auto flex w-full max-w-6xl flex-col items-center px-5 pb-8 pt-32 sm:pt-36">
                 <div className="mb-7 text-center">
                     <p className={`mb-3 ${textStyles.eyebrow}`}>
-                        Small Price
+                        {searchCopy.eyebrow}
                     </p>
                     <h1 className={`mx-auto max-w-3xl ${textStyles.heading}`}>
-                        Search smarter before you buy.
+                        {searchCopy.heading}
                     </h1>
                 </div>
 
@@ -29,20 +30,20 @@ function SearchBar(){
                             />
                         </svg>
                         <label className="sr-only" htmlFor="product-search">
-                            Search products
+                            {searchCopy.label}
                         </label>
                         <input
                             id="product-search"
                             className={inputStyles.searchInput}
                             type="search"
                             name="q"
-                            placeholder="Search products, brands, or model names"
+                            placeholder={searchCopy.placeholder}
                         />
                         <button
                             className={`shrink-0 ${buttonStyles.primary}`}
                             type="submit"
                         >
-                            Search
+                            {searchCopy.submit}
                         </button>
                     </div>
                 </form>

@@ -1,3 +1,4 @@
+import { popularCopy } from "../constants/copy.js"
 import { quarterlyPopularProducts } from "../data/products.js"
 import { badgeStyles, cardStyles, textStyles } from "../theme/styles.js"
 
@@ -7,12 +8,12 @@ function QuarterlyPopularProducts() {
       <div className="mb-5 flex items-end justify-between gap-4">
         <div>
           <p className={textStyles.cardEyebrow}>
-            Quarterly
+            {popularCopy.quarterly.eyebrow}
           </p>
-          <h2 className={`mt-1 ${textStyles.cardTitle}`}>Big movers</h2>
+          <h2 className={`mt-1 ${textStyles.cardTitle}`}>{popularCopy.quarterly.title}</h2>
         </div>
         <span className={badgeStyles.muted}>
-          90 days
+          {popularCopy.quarterly.period}
         </span>
       </div>
 

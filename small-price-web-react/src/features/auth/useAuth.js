@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react"
+import { authCopy } from "../../constants/copy.js"
 import { loginWithEmailAndPassword } from "./authService.js"
 
 export function useAuth() {
@@ -14,7 +15,7 @@ export function useAuth() {
         if (!nextUser) {
           return {
             ok: false,
-            error: "Email or password is incorrect.",
+            error: authCopy.loginError,
           }
         }
 
