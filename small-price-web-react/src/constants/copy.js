@@ -69,3 +69,21 @@ export const themeCopy = {
   switchToLight: "Switch to light mode",
   switchToDark: "Switch to dark mode",
 }
+
+export const footerCopy = {
+  brand: "Small Price",
+  description: "Track products, compare price movement, and make more confident buying decisions.",
+  independent: "An independent price-tracking product built in Aotearoa New Zealand.",
+  navigationTitle: "Explore",
+  navigationLabel: "Footer navigation",
+  backToTopLabel: "Small Price, back to top",
+  navigation: [
+    { label: "Search", href: "#search" },
+    { label: "Popular products", href: "#popular-products" },
+    { label: "Your watchlist", href: "#watchlist" },
+    { label: "Back to top", href: "#top" },
+  ],
+  copyright: (year) => `© ${year} Small Price. All rights reserved.`,
+  region: "Serving Australia and New Zealand",
+  disclaimer: "Prices and availability can change without notice. Always confirm the final price and product details with the retailer before purchasing.",
+}

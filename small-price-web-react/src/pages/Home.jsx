@@ -3,6 +3,7 @@ import SearchBar from "../components/SearchBar.jsx";
 import LoginProfile from "../components/LoginProfile.jsx";
 import PopularProductsList from "../components/PopularProductsList.jsx";
 import ThemeToggle from "../components/ThemeToggle.jsx";
+import Footer from "../components/Footer.jsx";
 import WatchlistSection from "../features/watchlist/components/WatchlistSection.jsx";
 import { popularCopy } from "../constants/copy.js";
 import {
@@ -16,7 +17,7 @@ function Home() {
     const [isDark, setIsDark] = useState(false)
 
     return(
-        <div className={`relative min-h-screen ${pageStyles.base} ${isDark ? "dark" : ""}`}>
+        <div className={`relative min-h-screen ${pageStyles.base} ${isDark ? "dark" : ""}`} id="top">
             <div className="absolute left-5 top-5 z-10 sm:left-8 sm:top-8">
                 <ThemeToggle
                     isDark={isDark}
@@ -27,7 +28,10 @@ function Home() {
                 <LoginProfile />
             </div>
             <SearchBar />
-            <section className="mx-auto grid w-full max-w-6xl gap-5 px-5 pb-16 lg:grid-cols-3">
+            <section
+                className="mx-auto grid w-full max-w-6xl gap-5 px-5 pb-16 lg:grid-cols-3"
+                id="popular-products"
+            >
                 <PopularProductsList
                     copy={popularCopy.weekly}
                     products={weeklyPopularProducts}
@@ -42,6 +46,7 @@ function Home() {
                 />
             </section>
             <WatchlistSection />
+            <Footer />
         </div>
     )
 }

@@ -78,3 +78,15 @@ export const themeToggleStyles = {
   shell: "rounded-full border border-white/70 bg-white/90 p-1.5 shadow-[0_12px_35px_rgba(15,23,42,0.1)] backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/90 dark:shadow-none",
   button: "flex h-10 w-10 items-center justify-center rounded-full text-slate-600 transition hover:bg-slate-100 hover:text-slate-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white",
 }
+
+export const footerStyles = {
+  shell: "border-t border-slate-200 bg-white text-slate-600 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-400",
+  mark: "flex h-9 w-9 items-center justify-center rounded-md bg-slate-950 text-xs font-black text-white dark:bg-slate-100 dark:text-slate-950",
+  brand: "text-lg font-bold text-slate-950 dark:text-slate-50",
+  description: "mt-5 text-sm leading-6 text-slate-600 dark:text-slate-300",
+  independent: "mt-3 text-xs font-medium text-slate-500 dark:text-slate-500",
+  heading: "text-xs font-bold uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400",
+  link: "text-sm font-medium text-slate-600 transition hover:text-slate-950 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate-600 dark:text-slate-300 dark:hover:text-white",
+  bottomBar: "mt-10 flex flex-col gap-2 border-t border-slate-200 pt-6 text-xs font-medium text-slate-500 sm:flex-row sm:items-center sm:justify-between dark:border-slate-800 dark:text-slate-500",
+  disclaimer: "mt-4 max-w-4xl text-xs leading-5 text-slate-400 dark:text-slate-600",
+}

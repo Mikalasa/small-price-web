@@ -13,7 +13,7 @@ function WatchlistSection() {
   const remainingCount = Math.max(watchedProductCount - visibleProducts.length, 0)
 
   return (
-    <section className={watchlistStyles.section}>
+    <section className={watchlistStyles.section} id="watchlist">
       <div className="mx-auto w-full max-w-6xl px-5">
         <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>

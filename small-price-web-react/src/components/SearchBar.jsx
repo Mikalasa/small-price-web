@@ -3,7 +3,7 @@ import { buttonStyles, inputStyles, pageStyles, textStyles } from "../theme/styl
 
 function SearchBar(){
     return (
-        <main className={pageStyles.base}>
+        <main className={pageStyles.base} id="search">
             <section className="mx-auto flex w-full max-w-6xl flex-col items-center px-5 pb-8 pt-32 sm:pt-36">
                 <div className="mb-7 text-center">
                     <p className={`mb-3 ${textStyles.eyebrow}`}>
