@@ -47,6 +47,24 @@ export const popularCopy = {
   },
 }
 
+export const watchlistCopy = {
+  eyebrow: "Your watchlist",
+  title: "Products you follow",
+  description: "Open a product to see how its price has moved over the last six months.",
+  itemCount: (count) => `${count} saved`,
+  currentPrice: "Current price",
+  previousPrice: "Previously",
+  chartEyebrow: "Six-month history",
+  chartTitle: "Price movement",
+  chartDescription: "Monthly lowest listed price",
+  closeModalLabel: "Close price history",
+  closeBackdropLabel: "Close price history backdrop",
+  openProductLabel: (name) => `View price history for ${name}`,
+  viewAllTitle: "View all saved products",
+  viewAllDescription: (remaining) => `${remaining} more products in your watchlist`,
+  viewAllAction: "View watchlist",
+}
+
 export const themeCopy = {
   switchToLight: "Switch to light mode",
   switchToDark: "Switch to dark mode",

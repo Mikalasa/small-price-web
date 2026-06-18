@@ -1,0 +1,121 @@
+const priceHistory = (prices) => {
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
+
+  return months.map((month, index) => ({
+    month,
+    price: prices[index],
+  }))
+}
+
+export const watchedProducts = [
+  {
+    id: "watch-airpods-pro",
+    name: "AirPods Pro",
+    category: "Audio",
+    price: 189,
+    previousPrice: 219,
+    initials: "AP",
+    priceHistory: priceHistory([239, 229, 229, 209, 199, 189]),
+  },
+  {
+    id: "watch-macbook-air",
+    name: "MacBook Air M3",
+    category: "Laptop",
+    price: 899,
+    previousPrice: 999,
+    initials: "MA",
+    priceHistory: priceHistory([1099, 1049, 999, 999, 949, 899]),
+  },
+  {
+    id: "watch-sony-xm5",
+    name: "Sony WH-1000XM5",
+    category: "Headphones",
+    price: 299,
+    previousPrice: 349,
+    initials: "XM",
+    priceHistory: priceHistory([399, 379, 359, 349, 319, 299]),
+  },
+  {
+    id: "watch-kindle",
+    name: "Kindle Paperwhite",
+    category: "Reader",
+    price: 129,
+    previousPrice: 149,
+    initials: "KP",
+    priceHistory: priceHistory([159, 149, 149, 139, 139, 129]),
+  },
+  {
+    id: "watch-switch-oled",
+    name: "Nintendo Switch OLED",
+    category: "Gaming",
+    price: 289,
+    previousPrice: 319,
+    initials: "NS",
+    priceHistory: priceHistory([349, 339, 329, 319, 299, 289]),
+  },
+  {
+    id: "watch-ipad-air",
+    name: "iPad Air",
+    category: "Tablet",
+    price: 499,
+    previousPrice: 549,
+    initials: "IA",
+    priceHistory: priceHistory([599, 579, 569, 549, 519, 499]),
+  },
+  {
+    id: "watch-dyson-v15",
+    name: "Dyson V15 Detect",
+    category: "Home",
+    price: 549,
+    previousPrice: 649,
+    initials: "DV",
+    priceHistory: priceHistory([699, 699, 659, 649, 599, 549]),
+  },
+  {
+    id: "watch-espresso",
+    name: "Breville Barista Express",
+    category: "Kitchen",
+    price: 579,
+    previousPrice: 649,
+    initials: "BE",
+    priceHistory: priceHistory([699, 679, 679, 649, 619, 579]),
+  },
+  {
+    id: "watch-iphone-15",
+    name: "iPhone 15",
+    category: "Smartphone",
+    price: 699,
+    previousPrice: 749,
+    initials: "IP",
+    priceHistory: priceHistory([799, 779, 759, 749, 729, 699]),
+  },
+  {
+    id: "watch-garmin-265",
+    name: "Garmin Forerunner 265",
+    category: "Wearable",
+    price: 399,
+    previousPrice: 449,
+    initials: "GF",
+    priceHistory: priceHistory([499, 479, 469, 449, 429, 399]),
+  },
+  {
+    id: "watch-robot-vacuum",
+    name: "Roborock Q8 Max",
+    category: "Home",
+    price: 429,
+    previousPrice: 499,
+    initials: "RQ",
+    priceHistory: priceHistory([599, 579, 549, 499, 469, 429]),
+  },
+  {
+    id: "watch-monitor",
+    name: "Dell UltraSharp 27",
+    category: "Monitor",
+    price: 459,
+    previousPrice: 519,
+    initials: "DU",
+    priceHistory: priceHistory([549, 539, 529, 519, 489, 459]),
+  },
+]
+
+export const watchedProductCount = 50

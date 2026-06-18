@@ -3,6 +3,7 @@ import SearchBar from "../components/SearchBar.jsx";
 import LoginProfile from "../components/LoginProfile.jsx";
 import PopularProductsList from "../components/PopularProductsList.jsx";
 import ThemeToggle from "../components/ThemeToggle.jsx";
+import WatchlistSection from "../features/watchlist/components/WatchlistSection.jsx";
 import { popularCopy } from "../constants/copy.js";
 import {
     monthlyPopularProducts,
@@ -40,6 +41,7 @@ function Home() {
                     products={quarterlyPopularProducts}
                 />
             </section>
+            <WatchlistSection />
         </div>
     )
 }
