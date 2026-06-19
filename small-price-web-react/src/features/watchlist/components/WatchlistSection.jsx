@@ -4,13 +4,16 @@ import { watchedProductCount, watchedProducts } from "../../../data/watchedProdu
 import { badgeStyles, textStyles, watchlistStyles } from "../../../theme/styles.js"
 import WatchedProductCard from "./WatchedProductCard.jsx"
 
-const MAX_VISIBLE_PRODUCTS = 12
+const COLLAPSED_PRODUCT_COUNT = 4
+const MAX_VISIBLE_PRODUCTS = 11
 const PriceHistoryModal = lazy(() => import("./PriceHistoryModal.jsx"))
 
 function WatchlistSection() {
   const [selectedProduct, setSelectedProduct] = useState(null)
-  const visibleProducts = watchedProducts.slice(0, MAX_VISIBLE_PRODUCTS)
-  const remainingCount = Math.max(watchedProductCount - visibleProducts.length, 0)
+  const [isExpanded, setIsExpanded] = useState(false)
+  const visibleProductCount = isExpanded ? MAX_VISIBLE_PRODUCTS : COLLAPSED_PRODUCT_COUNT
+  const visibleProducts = watchedProducts.slice(0, visibleProductCount)
+  const remainingCount = Math.max(watchedProductCount - MAX_VISIBLE_PRODUCTS, 0)
 
   return (
     <section className={watchlistStyles.section} id="watchlist">
@@ -25,12 +28,35 @@ function WatchlistSection() {
               {watchlistCopy.description}
             </p>
           </div>
-          <span className={`w-fit ${badgeStyles.muted}`}>
-            {watchlistCopy.itemCount(watchedProductCount)}
-          </span>
+          <div className="flex items-center gap-2">
+            <span className={`w-fit ${badgeStyles.muted}`}>
+              {watchlistCopy.itemCount(watchedProductCount)}
+            </span>
+            <button
+              className={watchlistStyles.expandButton}
+              type="button"
+              aria-controls="watched-products-grid"
+              aria-expanded={isExpanded}
+              onClick={() => setIsExpanded((current) => !current)}
+            >
+              {isExpanded ? watchlistCopy.collapse : watchlistCopy.expand}
+              <span
+                className={`text-base leading-none transition-transform ${isExpanded ? "rotate-180" : ""}`}
+                aria-hidden="true"
+              >
+                ↓
+              </span>
+            </button>
+          </div>
         </div>
 
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div
+          className={isExpanded
+            ? "grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+            : "grid grid-flow-col auto-cols-[minmax(16rem,1fr)] gap-3 overflow-x-auto pb-2 xl:grid-cols-4 xl:auto-cols-auto xl:overflow-visible xl:pb-0"
+          }
+          id="watched-products-grid"
+        >
           {visibleProducts.map((product) => (
             <WatchedProductCard
               key={product.id}
@@ -39,7 +65,7 @@ function WatchlistSection() {
             />
           ))}
 
-          {remainingCount > 0 ? (
+          {isExpanded && remainingCount > 0 ? (
             <button className={watchlistStyles.viewAllCard} type="button">
               <span className="text-lg font-bold text-slate-950 dark:text-slate-50">
                 {watchlistCopy.viewAllTitle}

@@ -63,6 +63,8 @@ export const watchlistCopy = {
   viewAllTitle: "View all saved products",
   viewAllDescription: (remaining) => `${remaining} more products in your watchlist`,
   viewAllAction: "View watchlist",
+  expand: "Expand",
+  collapse: "Collapse",
 }
 
 export const themeCopy = {
