@@ -21,6 +21,15 @@ export const cardStyles = {
   productImage: "relative flex aspect-square items-center justify-center overflow-hidden rounded-xl border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-800",
 }
 
+export const dailyDealStyles = {
+  grid: "grid grid-flow-col auto-cols-[minmax(16.5rem,1fr)] gap-4 overflow-x-auto pb-2 xl:grid-cols-4 xl:auto-cols-auto xl:overflow-visible xl:pb-0",
+  card: "flex min-h-[31rem] flex-col overflow-hidden rounded-xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900",
+  image: "relative flex h-52 items-center justify-center border-b border-slate-100 bg-slate-50 dark:border-slate-800 dark:bg-slate-950/40",
+  imageInitials: "text-4xl font-black text-slate-200 dark:text-slate-700",
+  discountBadge: "absolute left-4 top-4 rounded-md bg-teal-50 px-3 py-1.5 text-sm font-bold text-teal-700 dark:bg-teal-950/60 dark:text-teal-300",
+  action: "mt-auto flex h-11 w-full items-center justify-center gap-2 rounded-lg bg-slate-950 px-4 text-sm font-semibold text-white transition hover:bg-slate-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600 dark:bg-slate-100 dark:text-slate-950 dark:hover:bg-white",
+}
+
 export const watchlistStyles = {
   section: "border-t border-slate-200 bg-white/55 py-14 dark:border-slate-800 dark:bg-slate-950",
   card: "group flex min-h-32 w-full items-center gap-4 rounded-xl border border-slate-200 bg-white p-4 text-left transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:hover:border-slate-600 dark:hover:bg-slate-800",

@@ -47,6 +47,17 @@ export const popularCopy = {
   },
 }
 
+export const dailyDealCopy = {
+  title: "Daily Deals",
+  location: "Deals available in New Zealand",
+  updated: "Updated daily",
+  from: "Price from",
+  action: "Compare deal",
+  discount: (amount) => `${amount}% off`,
+  reviews: (count) => `${count} reviews`,
+  moreShops: (count) => `+${count} shops`,
+}
+
 export const watchlistCopy = {
   eyebrow: "Your watchlist",
   title: "Products you follow",
@@ -82,6 +93,7 @@ export const footerCopy = {
   navigation: [
     { label: "Search", href: "#search" },
     { label: "Popular products", href: "#popular-products" },
+    { label: "Daily deal", href: "#daily-deal" },
     { label: "Your watchlist", href: "#watchlist" },
     { label: "Back to top", href: "#top" },
   ],

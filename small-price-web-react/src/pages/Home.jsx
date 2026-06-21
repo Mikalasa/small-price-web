@@ -4,6 +4,7 @@ import LoginProfile from "../components/LoginProfile.jsx";
 import PopularProductsList from "../components/PopularProductsList.jsx";
 import ThemeToggle from "../components/ThemeToggle.jsx";
 import Footer from "../components/Footer.jsx";
+import DailyDeals from "../features/deals/components/DailyDeals.jsx";
 import WatchlistSection from "../features/watchlist/components/WatchlistSection.jsx";
 import { popularCopy } from "../constants/copy.js";
 import {
@@ -45,6 +46,7 @@ function Home() {
                     products={quarterlyPopularProducts}
                 />
             </section>
+            <DailyDeals />
             <WatchlistSection />
             <Footer />
         </div>
