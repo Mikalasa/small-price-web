@@ -14,7 +14,7 @@ function PopularProductsList({ copy, products }) {
       <ol className="space-y-3">
         {products.map((product, index) => (
           <li
-            className={`grid grid-cols-[4.5rem_1fr] gap-4 ${cardStyles.productItem}`}
+            className={`grid grid-cols-[6.5rem_minmax(0,1fr)] items-center gap-4 ${cardStyles.productItem}`}
             key={product.id}
           >
             <div
@@ -28,7 +28,7 @@ function PopularProductsList({ copy, products }) {
               </span>
             </div>
 
-            <div className="min-w-0">
+            <div className="min-w-0 py-1">
               <div className="flex items-start justify-between gap-3">
                 <div className="min-w-0">
                   <h3 className={textStyles.productName}>{product.name}</h3>
