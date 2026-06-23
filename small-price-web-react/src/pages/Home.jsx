@@ -19,13 +19,11 @@ function Home() {
 
     return(
         <div className={`relative min-h-screen ${pageStyles.base} ${isDark ? "dark" : ""}`} id="top">
-            <div className="absolute left-5 top-5 z-10 sm:left-8 sm:top-8">
+            <div className={pageStyles.topBar}>
                 <ThemeToggle
                     isDark={isDark}
                     onToggle={() => setIsDark((current) => !current)}
                 />
-            </div>
-            <div className="absolute right-5 top-5 z-10 sm:right-8 sm:top-8">
                 <LoginProfile />
             </div>
             <SearchBar />

@@ -1,5 +1,6 @@
 export const pageStyles = {
   base: "bg-[#f7f8fb] text-slate-950 transition-colors dark:bg-slate-950 dark:text-slate-100",
+  topBar: "absolute left-1/2 top-5 z-10 flex w-full max-w-6xl -translate-x-1/2 items-center justify-between px-5 sm:top-8 sm:px-5",
 }
 
 export const textStyles = {
