@@ -4,11 +4,8 @@ import { buttonStyles, inputStyles, pageStyles, textStyles } from "../theme/styl
 function SearchBar(){
     return (
         <main className={pageStyles.base} id="search">
-            <section className="mx-auto flex w-full max-w-6xl flex-col items-center px-5 pb-8 pt-32 sm:pt-36">
+            <section className="mx-auto flex w-full max-w-6xl flex-col items-center px-5 pb-8 pt-28 sm:pt-32">
                 <div className="mb-7 text-center">
-                    <p className={`mb-3 ${textStyles.eyebrow}`}>
-                        {searchCopy.eyebrow}
-                    </p>
                     <h1 className={`mx-auto max-w-3xl ${textStyles.heading}`}>
                         {searchCopy.heading}
                     </h1>

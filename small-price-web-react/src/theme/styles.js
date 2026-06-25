@@ -1,6 +1,15 @@
 export const pageStyles = {
   base: "bg-[#f7f8fb] text-slate-950 transition-colors dark:bg-slate-950 dark:text-slate-100",
-  topBar: "absolute inset-x-0 top-5 z-10 mx-auto flex w-full max-w-6xl items-center justify-between px-5 sm:top-8 sm:px-5",
+  topBar: "absolute inset-x-0 top-5 z-10 mx-auto flex w-[calc(100%-2.5rem)] max-w-6xl items-center justify-between rounded-2xl border border-white/80 bg-white/78 px-3 py-2 backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/78 sm:top-6 sm:px-4",
+}
+
+export const headerStyles = {
+  brandLink: "flex items-center gap-3 rounded-lg text-slate-950 transition hover:text-slate-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate-600 dark:text-slate-50 dark:hover:text-white",
+  brandMark: "flex h-8 w-8 items-center justify-center rounded-md bg-slate-950 text-[11px] font-black text-white dark:bg-slate-100 dark:text-slate-950",
+  brandName: "hidden text-sm font-black tracking-normal sm:block",
+  nav: "hidden items-center gap-1 md:flex",
+  navLink: "rounded-lg px-3.5 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-slate-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white",
+  actions: "flex items-center gap-2",
 }
 
 export const textStyles = {
@@ -67,7 +76,7 @@ export const inputStyles = {
 }
 
 export const loginStyles = {
-  profileShell: "rounded-full border border-white/70 bg-white/90 p-1.5 shadow-[0_12px_35px_rgba(15,23,42,0.1)] backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/90 dark:shadow-none",
+  profileShell: "rounded-full border border-slate-200 bg-white/80 p-1 dark:border-slate-700 dark:bg-slate-900/80",
   avatarButton: "h-10 w-10 rounded-full text-sm font-bold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600",
   modalBackdrop: "bg-slate-950/30 px-4 py-8 dark:bg-slate-950/70",
   modalPanel: "relative w-full max-w-md overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_22px_70px_rgba(15,23,42,0.16)] dark:border-slate-800 dark:bg-slate-900 dark:shadow-none",
@@ -86,7 +95,7 @@ export const loginStyles = {
 }
 
 export const themeToggleStyles = {
-  shell: "rounded-full border border-white/70 bg-white/90 p-1.5 shadow-[0_12px_35px_rgba(15,23,42,0.1)] backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/90 dark:shadow-none",
+  shell: "rounded-full border border-slate-200 bg-white/80 p-1 dark:border-slate-700 dark:bg-slate-900/80",
   button: "flex h-10 w-10 items-center justify-center rounded-full text-slate-600 transition hover:bg-slate-100 hover:text-slate-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white",
 }
 

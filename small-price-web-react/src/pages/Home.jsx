@@ -1,9 +1,8 @@
 import { useState } from "react";
 import SearchBar from "../components/SearchBar.jsx";
-import LoginProfile from "../components/LoginProfile.jsx";
 import PopularProductsList from "../components/PopularProductsList.jsx";
-import ThemeToggle from "../components/ThemeToggle.jsx";
 import Footer from "../components/Footer.jsx";
+import Header from "../components/Header.jsx";
 import DailyDeals from "../features/deals/components/DailyDeals.jsx";
 import WatchlistSection from "../features/watchlist/components/WatchlistSection.jsx";
 import { popularCopy } from "../constants/copy.js";
@@ -19,13 +18,10 @@ function Home() {
 
     return(
         <div className={`relative min-h-screen ${pageStyles.base} ${isDark ? "dark" : ""}`} id="top">
-            <div className={pageStyles.topBar}>
-                <ThemeToggle
-                    isDark={isDark}
-                    onToggle={() => setIsDark((current) => !current)}
-                />
-                <LoginProfile />
-            </div>
+            <Header
+                isDark={isDark}
+                onThemeToggle={() => setIsDark((current) => !current)}
+            />
             <SearchBar />
             <section
                 className="mx-auto grid w-full max-w-6xl gap-5 px-5 pb-16 lg:grid-cols-3"

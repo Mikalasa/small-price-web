@@ -6,6 +6,16 @@ export const searchCopy = {
   submit: "Search",
 }
 
+export const headerCopy = {
+  brand: "Small Price",
+  navigationLabel: "Primary navigation",
+  navigation: [
+    { label: "Popular", href: "#popular-products" },
+    { label: "Daily Deals", href: "#daily-deal" },
+    { label: "Watchlist", href: "#watchlist" },
+  ],
+}
+
 export const authCopy = {
   profileEyebrow: "Profile",
   loginEyebrow: "Account access",
