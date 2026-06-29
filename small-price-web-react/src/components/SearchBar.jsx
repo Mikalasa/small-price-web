@@ -9,6 +9,9 @@ function SearchBar(){
                     <h1 className={`mx-auto max-w-3xl ${textStyles.heading}`}>
                         {searchCopy.heading}
                     </h1>
+                    <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-slate-500 dark:text-slate-400 sm:text-base">
+                        {searchCopy.description}
+                    </p>
                 </div>
 
                 <form className="w-full max-w-3xl" action="#" role="search">

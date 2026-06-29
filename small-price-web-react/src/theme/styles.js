@@ -26,25 +26,25 @@ export const textStyles = {
 }
 
 export const cardStyles = {
-  popular: "rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_14px_40px_rgba(15,23,42,0.06)] dark:border-slate-800 dark:bg-slate-900 dark:shadow-none",
-  productItem: "min-h-32 rounded-xl border border-slate-100 bg-slate-50 p-3 transition hover:border-slate-300 hover:bg-white dark:border-slate-800 dark:bg-slate-900/80 dark:hover:border-slate-700 dark:hover:bg-slate-900",
-  productImage: "relative flex aspect-square w-full items-center justify-center overflow-hidden rounded-lg border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-800",
+  popular: "rounded-xl border border-slate-200 bg-white/78 p-5 dark:border-slate-800 dark:bg-slate-900/72",
+  productItem: "min-h-32 rounded-lg border border-slate-100 bg-white p-3 transition hover:border-slate-300 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:hover:border-slate-700 dark:hover:bg-slate-800/70",
+  productImage: "relative flex aspect-square w-full items-center justify-center overflow-hidden rounded-lg border border-slate-200 bg-slate-50 dark:border-slate-700 dark:bg-slate-950/35",
 }
 
 export const dailyDealStyles = {
   grid: "grid grid-flow-col auto-cols-[minmax(16.5rem,1fr)] gap-4 overflow-x-auto pb-2 xl:grid-cols-4 xl:auto-cols-auto xl:overflow-visible xl:pb-0",
-  card: "flex min-h-[31rem] flex-col overflow-hidden rounded-xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900",
-  image: "relative flex h-52 items-center justify-center border-b border-slate-100 bg-slate-50 dark:border-slate-800 dark:bg-slate-950/40",
-  imageInitials: "text-4xl font-black text-slate-200 dark:text-slate-700",
+  card: "flex min-h-[31rem] flex-col overflow-hidden rounded-xl border border-slate-200 bg-white transition hover:border-slate-300 dark:border-slate-800 dark:bg-slate-900 dark:hover:border-slate-700",
+  image: "relative flex h-56 items-center justify-center border-b border-slate-100 bg-slate-50 dark:border-slate-800 dark:bg-slate-950/40",
+  imageInitials: "text-5xl font-black text-slate-200 dark:text-slate-700",
   discountBadge: "absolute left-4 top-4 rounded-md bg-teal-50 px-3 py-1.5 text-sm font-bold text-teal-700 dark:bg-teal-950/60 dark:text-teal-300",
   action: "mt-auto flex h-11 w-full items-center justify-center gap-2 rounded-lg bg-slate-950 px-4 text-sm font-semibold text-white transition hover:bg-slate-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600 dark:bg-slate-100 dark:text-slate-950 dark:hover:bg-white",
 }
 
 export const watchlistStyles = {
-  section: "border-t border-slate-200 bg-white/55 py-14 dark:border-slate-800 dark:bg-slate-950",
-  card: "group flex min-h-36 w-full items-center gap-4 rounded-xl border border-slate-200 bg-white p-4 text-left transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:hover:border-slate-600 dark:hover:bg-slate-800",
-  image: "flex h-24 w-24 shrink-0 items-center justify-center rounded-lg border border-slate-200 bg-slate-50 text-lg font-black text-slate-300 transition group-hover:bg-white dark:border-slate-700 dark:bg-slate-800 dark:text-slate-600 dark:group-hover:bg-slate-900",
-  viewAllCard: "flex min-h-32 w-full flex-col items-start justify-center rounded-xl border border-dashed border-slate-300 bg-transparent p-4 text-left transition hover:border-slate-500 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600 dark:border-slate-700 dark:hover:border-slate-500 dark:hover:bg-slate-900",
+  section: "border-y border-slate-200 bg-slate-100/65 py-14 dark:border-slate-800 dark:bg-slate-900/35",
+  card: "group flex min-h-36 w-full items-center gap-4 rounded-xl border border-slate-200 bg-white p-4 text-left transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600 dark:border-slate-800 dark:bg-slate-950/50 dark:hover:border-slate-600 dark:hover:bg-slate-900",
+  image: "flex h-24 w-24 shrink-0 items-center justify-center rounded-lg border border-slate-200 bg-slate-50 text-lg font-black text-slate-300 transition group-hover:bg-white dark:border-slate-700 dark:bg-slate-950/60 dark:text-slate-600 dark:group-hover:bg-slate-900",
+  viewAllCard: "flex min-h-32 w-full flex-col items-start justify-center rounded-xl border border-dashed border-slate-300 bg-white/45 p-4 text-left transition hover:border-slate-500 hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600 dark:border-slate-700 dark:bg-slate-950/25 dark:hover:border-slate-500 dark:hover:bg-slate-900",
   modalBackdrop: "bg-slate-950/35 px-4 py-8 dark:bg-slate-950/75",
   modalPanel: "relative w-full max-w-2xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_22px_70px_rgba(15,23,42,0.16)] dark:border-slate-800 dark:bg-slate-900 dark:shadow-none",
   chart: "h-72 rounded-xl border border-slate-200 bg-slate-50 p-3 dark:border-slate-800 dark:bg-slate-950/50",
@@ -55,7 +55,7 @@ export const watchlistStyles = {
 export const badgeStyles = {
   muted: "rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300",
   productNote: "rounded-full bg-slate-100 px-2.5 py-1 font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300",
-  rank: "absolute left-2 top-2 flex h-5 w-5 items-center justify-center rounded-full bg-slate-100 text-[11px] font-bold text-slate-500 dark:bg-slate-700 dark:text-slate-300",
+  rank: "absolute left-2 top-2 flex h-5 w-5 items-center justify-center rounded-md bg-white text-[11px] font-bold text-slate-500 ring-1 ring-slate-200 dark:bg-slate-900 dark:text-slate-300 dark:ring-slate-700",
 }
 
 export const buttonStyles = {

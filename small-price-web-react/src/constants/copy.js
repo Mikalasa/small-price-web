@@ -1,6 +1,7 @@
 export const searchCopy = {
   eyebrow: "Small Price",
   heading: "Search smarter before you buy.",
+  description: "Compare prices and track product movement across New Zealand retailers.",
   label: "Search products",
   placeholder: "Search products, brands, or model names",
   submit: "Search",
@@ -10,8 +11,8 @@ export const headerCopy = {
   brand: "Small Price",
   navigationLabel: "Primary navigation",
   navigation: [
-    { label: "Popular", href: "#popular-products" },
-    { label: "Daily Deals", href: "#daily-deal" },
+    { label: "Deals", href: "#daily-deal" },
+    { label: "Trending", href: "#popular-products" },
     { label: "Watchlist", href: "#watchlist" },
   ],
 }
@@ -40,6 +41,8 @@ export const authCopy = {
 }
 
 export const popularCopy = {
+  sectionTitle: "Trending products",
+  sectionDescription: "Shortlists based on recent searches, saved products, and price movement.",
   weekly: {
     eyebrow: "Weekly",
     title: "Top searches",
@@ -69,9 +72,9 @@ export const dailyDealCopy = {
 }
 
 export const watchlistCopy = {
-  eyebrow: "Your watchlist",
-  title: "Products you follow",
-  description: "Open a product to see how its price has moved over the last six months.",
+  eyebrow: "Your account",
+  title: "Tracked products",
+  description: "Open a saved product to review its lowest listed price over the last six months.",
   itemCount: (count) => `${count} saved`,
   currentPrice: "Current price",
   previousPrice: "Previously",

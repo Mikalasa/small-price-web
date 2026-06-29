@@ -23,24 +23,31 @@ function Home() {
                 onThemeToggle={() => setIsDark((current) => !current)}
             />
             <SearchBar />
-            <section
-                className="mx-auto grid w-full max-w-6xl gap-5 px-5 pb-16 lg:grid-cols-3"
-                id="popular-products"
-            >
-                <PopularProductsList
-                    copy={popularCopy.weekly}
-                    products={weeklyPopularProducts}
-                />
-                <PopularProductsList
-                    copy={popularCopy.monthly}
-                    products={monthlyPopularProducts}
-                />
-                <PopularProductsList
-                    copy={popularCopy.quarterly}
-                    products={quarterlyPopularProducts}
-                />
-            </section>
             <DailyDeals />
+            <section className="mx-auto w-full max-w-6xl px-5 pb-16" id="popular-products">
+                <div className="mb-6">
+                    <h2 className="text-2xl font-bold text-slate-950 dark:text-slate-50">
+                        {popularCopy.sectionTitle}
+                    </h2>
+                    <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-500 dark:text-slate-400">
+                        {popularCopy.sectionDescription}
+                    </p>
+                </div>
+                <div className="grid gap-5 lg:grid-cols-3">
+                    <PopularProductsList
+                        copy={popularCopy.weekly}
+                        products={weeklyPopularProducts}
+                    />
+                    <PopularProductsList
+                        copy={popularCopy.monthly}
+                        products={monthlyPopularProducts}
+                    />
+                    <PopularProductsList
+                        copy={popularCopy.quarterly}
+                        products={quarterlyPopularProducts}
+                    />
+                </div>
+            </section>
             <WatchlistSection />
             <Footer />
         </div>
