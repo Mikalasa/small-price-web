@@ -1,8 +1,11 @@
 import { footerCopy } from "../constants/copy.js"
 import { footerStyles } from "../theme/styles.js"
 
-function Footer() {
+function Footer({ showWatchlist = true }) {
   const currentYear = new Date().getFullYear()
+  const navigation = showWatchlist
+    ? footerCopy.navigation
+    : footerCopy.navigation.filter((item) => item.href !== "#watchlist")
 
   return (
     <footer className={footerStyles.shell}>
@@ -20,7 +23,7 @@ function Footer() {
           <nav aria-label={footerCopy.navigationLabel}>
             <p className={footerStyles.heading}>{footerCopy.navigationTitle}</p>
             <ul className="mt-4 grid grid-cols-2 gap-x-6 gap-y-3">
-              {footerCopy.navigation.map((item) => (
+              {navigation.map((item) => (
                 <li key={item.href}>
                   <a className={footerStyles.link} href={item.href}>
                     {item.label}

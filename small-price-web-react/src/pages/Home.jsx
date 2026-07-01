@@ -11,14 +11,17 @@ import {
     quarterlyPopularProducts,
     weeklyPopularProducts,
 } from "../data/products.js";
+import { useAuth } from "../features/auth/useAuth.js";
 import { pageStyles } from "../theme/styles.js";
 
 function Home() {
     const [isDark, setIsDark] = useState(false)
+    const auth = useAuth()
 
     return(
         <div className={`relative min-h-screen ${pageStyles.base} ${isDark ? "dark" : ""}`} id="top">
             <Header
+                auth={auth}
                 isDark={isDark}
                 onThemeToggle={() => setIsDark((current) => !current)}
             />
@@ -48,8 +51,8 @@ function Home() {
                     />
                 </div>
             </section>
-            <WatchlistSection />
-            <Footer />
+            <WatchlistSection auth={auth} />
+            <Footer showWatchlist={auth.isLoggedIn} />
         </div>
     )
 }

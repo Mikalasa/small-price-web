@@ -8,12 +8,16 @@ const COLLAPSED_PRODUCT_COUNT = 4
 const MAX_VISIBLE_PRODUCTS = 11
 const PriceHistoryModal = lazy(() => import("./PriceHistoryModal.jsx"))
 
-function WatchlistSection() {
+function WatchlistSection({ auth }) {
   const [selectedProduct, setSelectedProduct] = useState(null)
   const [isExpanded, setIsExpanded] = useState(false)
   const visibleProductCount = isExpanded ? MAX_VISIBLE_PRODUCTS : COLLAPSED_PRODUCT_COUNT
   const visibleProducts = watchedProducts.slice(0, visibleProductCount)
   const remainingCount = Math.max(watchedProductCount - MAX_VISIBLE_PRODUCTS, 0)
+
+  if (!auth?.isLoggedIn) {
+    return null
+  }
 
   return (
     <section className={watchlistStyles.section} id="watchlist">

@@ -3,7 +3,11 @@ import { headerStyles, pageStyles } from "../theme/styles.js"
 import LoginProfile from "./LoginProfile.jsx"
 import ThemeToggle from "./ThemeToggle.jsx"
 
-function Header({ isDark, onThemeToggle }) {
+function Header({ auth, isDark, onThemeToggle }) {
+  const navigation = auth?.isLoggedIn
+    ? headerCopy.navigation
+    : headerCopy.navigation.filter((item) => item.href !== "#watchlist")
+
   return (
     <header className={pageStyles.topBar}>
       <a className={headerStyles.brandLink} href="#search">
@@ -12,7 +16,7 @@ function Header({ isDark, onThemeToggle }) {
       </a>
 
       <nav className={headerStyles.nav} aria-label={headerCopy.navigationLabel}>
-        {headerCopy.navigation.map((item) => (
+        {navigation.map((item) => (
           <a className={headerStyles.navLink} href={item.href} key={item.href}>
             {item.label}
           </a>
@@ -24,7 +28,7 @@ function Header({ isDark, onThemeToggle }) {
           isDark={isDark}
           onToggle={onThemeToggle}
         />
-        <LoginProfile />
+        <LoginProfile auth={auth} />
       </div>
     </header>
   )

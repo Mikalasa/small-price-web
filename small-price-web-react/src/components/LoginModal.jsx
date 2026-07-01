@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { createPortal } from "react-dom"
 import { authCopy } from "../constants/copy.js"
 import { getTestCredentials } from "../features/auth/authService.js"
 import { getInitials } from "../features/auth/authUtils.js"
@@ -12,7 +13,7 @@ function LoginModal({ isOpen, auth, onClose }) {
   const { user } = auth
   const isLoggedIn = Boolean(user)
 
-  return (
+  return createPortal(
     <div className={`fixed inset-0 z-50 flex items-center justify-center ${loginStyles.modalBackdrop}`}>
       <button
         className="absolute inset-0 cursor-default"
@@ -74,7 +75,8 @@ function LoginModal({ isOpen, auth, onClose }) {
           )}
         </div>
       </section>
-    </div>
+    </div>,
+    document.body,
   )
 }
 

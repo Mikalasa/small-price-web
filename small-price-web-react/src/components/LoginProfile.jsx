@@ -5,9 +5,10 @@ import { useAuth } from "../features/auth/useAuth.js"
 import { buttonStyles, loginStyles } from "../theme/styles.js"
 import LoginModal from "./LoginModal.jsx"
 
-function LoginProfile() {
+function LoginProfile({ auth: providedAuth }) {
   const [isOpen, setIsOpen] = useState(false)
-  const auth = useAuth()
+  const localAuth = useAuth()
+  const auth = providedAuth ?? localAuth
   const { user, isLoggedIn } = auth
   const initials = user ? getInitials(user.name) : ""
 
